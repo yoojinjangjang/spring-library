@@ -47,6 +47,9 @@ BUILD SUCCESSFUL in 0s
 - service
 - 필요하다면 패키지 추가는 가능하다.
 
+### ERD
+[ERD](https://www.erdcloud.com/d/9j2ZL2bnLWmcc99dm)
+
 ---
 
 ## 🚀 기능 요구 사항
