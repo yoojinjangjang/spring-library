@@ -57,7 +57,7 @@ BUILD SUCCESSFUL in 0s
 도서관 시스템에 들어가는 기능을 구현해야 한다. 도서관 시스템 기능은 아래와 같다.
 
 - 모든 테이블은 ERD에 명시된 데이터 타입과 길이 제한이 적용된다. 모든 컬럼에 대해 `NOT NULL` 조건이 붙는다. 
-- 도서 정보 테이블을 제외한 모든 테이블의 PK는 `@GeneratedValue`를 적용한다.
+- 도서 정보 테이블과 도서 을 제외한 모든 테이블의 PK는 `@GeneratedValue`를 적용한다.
 - 모든 사용자 정의 예외 클래스는 `IllegalArgumentException`를 상속받는다.
   - 등록, 수정시 데이터에 null값이 존재하는 경우 `NullExistException`를 발생시킨다.
   - 등록, 수정시 데이터 범위를 벗어난 경우 `DataOutOfRangeException`를 발생시킨다.
