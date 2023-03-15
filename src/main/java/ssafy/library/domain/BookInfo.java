@@ -37,7 +37,4 @@ public class BookInfo {
     private Category category; // 도서분류 PK -> 외래키로써 여러개의 책 정보는 하나의 카테고리를 가진다.
 
 
-
-
-
 }

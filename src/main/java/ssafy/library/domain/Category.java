@@ -8,10 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Category {
 
     @Id
@@ -26,6 +30,6 @@ public class Category {
     // 연관관계 주인과의 매핑을 위한 mappedBy 속성 필요
     @OneToMany(mappedBy = "category")
     // bookinfo 테이블에 있는, category 필드에 의해서 매핑이 될것이다.
-    private List<BookInfo> bookInfoList = new ArrayList<>();
+    private List<BookInfo> bookInfos = new ArrayList<>();
 
 }

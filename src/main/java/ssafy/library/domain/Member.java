@@ -1,16 +1,21 @@
 package ssafy.library.domain;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Member {
 
     @Id @GeneratedValue
@@ -28,15 +33,19 @@ public class Member {
     @Embedded
     private Address address;
 
-    public Member(Long id, String name, String birth, String phone, String email,
-            Address address) {
-        this.id = id;
-        this.name = name;
-        this.birth = birth;
-        this.phone = phone;
-        this.email = email;
-        this.address = address;
-    }
+    // 회원과 예약은 일대 다의 관계 하나의 회원이 여러개의 예약을 가진다.
+    // 멤버를 조회할때 예약정보를 불러오고 싶은 경우 해당 필드 정의해야 함
+    // => 그럴필요 없는 경우 없어도됨
+    @OneToMany(mappedBy = "member")
+    private List<Reservation> reservations = new ArrayList<>();
+
+
+    // 회원과 대출은 일대 다의 관계 하나의 회원이 여러개의 예약을 가진다.
+    // 멤버를 조회할때 대출정보를 불러오고 싶은 경우 해당 필드 정의해야 함
+    // => 그럴필요 없는 경우 없어도됨
+    @OneToMany(mappedBy = "member")
+    private List<Loan> loans = new ArrayList<>();
+
 }
 
 /*
