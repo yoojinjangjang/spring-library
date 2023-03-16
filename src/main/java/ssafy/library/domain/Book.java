@@ -22,9 +22,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Book {
     @Id
-    @GeneratedValue
-    @Column(name="book_id")
-    private Long id;
+    @Column(name="book_id", length = 10)
+    private String id;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
